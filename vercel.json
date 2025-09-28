@@ -11,11 +11,6 @@
       "src": "/(.*)",
       "dest": "server.js"
     }
-  ],
-  "env": {
-    "OPENAI_API_KEY": "@openai_api_key",
-    "GOOGLE_API_KEY": "@google_api_key",
-    "GOOGLE_CX": "@google_cx"
-  }
+  ]
 }
 
