@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Part Analysis Tool - Advanced Component Search & Cross-Reference</title>
+	<meta name="description" content="Professional part analysis tool with AI-powered alternatives and TI cross-reference integration. Find compatible components with detailed specifications and match types.">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDge2czxyjjigbDBfROeU5s9wJkY0FEGg0FEXtEqbbrMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+	<div class="container">
+		<!-- Part Alternatives Section -->
+		<div class="card">
+			<h1>Advanced Part Analysis</h1>
+			<p class="subtitle">Professional component search with AI-powered alternatives and cross-reference integration</p>
+			
+			<div class="input-group">
+				<input 
+					type="text" 
+					id="partInput" 
+					placeholder="Enter part number (e.g., LM317, Intel i7-10700K)..."
+					class="input-field"
+				>
+				<button id="searchBtn" class="search-btn">
+					<span>Find Alternatives</span>
+					<div class="spinner" id="spinner"></div>
+				</button>
+			</div>
+			
+			<div class="results" id="results">
+				<div class="placeholder">
+					<div class="placeholder-icon">🔧</div>
+					<p>Enter a part number to find alternatives</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bulk Processing Section -->
+		<div class="card">
+			<h1>Bulk Processing</h1>
+			<p class="subtitle">Upload up to 10 part numbers and export comprehensive alternatives analysis</p>
+			
+			<div class="bulk-upload-area" id="bulkUploadArea">
+				<div class="upload-content">
+					<div class="upload-icon">📊</div>
+					<h3>Upload Excel File</h3>
+					<p>Drag and drop your Excel file here or click to browse</p>
+					<p class="upload-hint">Supported formats: .xlsx, .xls, .csv (Max 10 part numbers)</p>
+					<input type="file" id="bulkFileInput" accept=".xlsx,.xls,.csv" style="display: none;">
+					<button id="browseBtn" class="browse-btn">Browse Files</button>
+				</div>
+			</div>
+			
+			<div class="bulk-results" id="bulkResults" style="display: none;">
+				<div class="bulk-summary" id="bulkSummary"></div>
+				<div class="bulk-table-container">
+					<table class="bulk-results-table" id="bulkResultsTable">
+						<thead>
+							<tr>
+								<th>Original Part</th>
+								<th>TI Cross-Reference</th>
+								<th>Match Type</th>
+								<th>AI Alternative 1</th>
+								<th>AI Alternative 2</th>
+								<th>AI Alternative 3</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody id="bulkResultsBody">
+						</tbody>
+					</table>
+				</div>
+				<div class="bulk-actions">
+					<button id="exportExcelBtn" class="export-excel-btn">📊 Export to Excel</button>
+					<button id="clearBulkBtn" class="clear-bulk-btn">🗑️ Clear Results</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Part Comparison Section -->
+		<div class="card">
+			<h1>Part Comparison</h1>
+			<p class="subtitle">Detailed side-by-side analysis of component specifications</p>
+			
+			<div class="input-group">
+				<input 
+					type="text" 
+					id="partAInput" 
+					placeholder="Enter Part A (e.g., LM317, PIC16F877A)..."
+					class="input-field"
+				>
+				<input 
+					type="text" 
+					id="partBInput" 
+					placeholder="Enter Part B (e.g., LT3080, ATmega328P)..."
+					class="input-field"
+				>
+				<button id="compareBtn" class="search-btn">
+					<span>Compare Parts</span>
+					<div class="spinner" id="compareSpinner"></div>
+				</button>
+			</div>
+			
+			<div class="results" id="compareResults">
+				<div class="placeholder">
+					<div class="placeholder-icon">⚖️</div>
+					<p>Enter two parts to compare their specifications</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="script.js"></script>
+</body>
+</html>
